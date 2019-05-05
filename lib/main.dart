@@ -4,20 +4,30 @@ void main(){
   runApp(
     new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new Container(
-          color: Colors.greenAccent,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: new Column(
-//              child: new Row(
-              children: <Widget>[
-                Text("One"),
-                Text("Two"),
-                Text("Three"),
-              ],
-            ),
-          ),
+      home: new Center(
+        child: new ListView(
+          children: <Widget>[
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("ONE"),
+            Text("OE"),
+          ],
+        ),
       ),
-    )
+    ),
   );
 }
