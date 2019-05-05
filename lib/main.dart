@@ -1,33 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(
     new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: new Center(
-        child: new ListView(
-          children: <Widget>[
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("ONE"),
-            Text("OE"),
-          ],
-        ),
-      ),
+      home: new GridView.count(crossAxisCount: 4,
+      children: <Widget>[
+        Text("one"),
+        Text("Two"),
+        Text("Three"),
+        Text("Four"),
+        Text("one"),
+        Text("Two"),
+        Text("Three"),
+        Text("Four"),
+      ],),
     ),
   );
 }
