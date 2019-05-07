@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+//Custom Package
+import 'package:fashion/customClass/category_horizontal_listview.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -25,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         animationCurve: Curves.fastOutSlowIn,
         autoplayDuration: Duration(milliseconds: 1000),
         dotSize: 5.0,
-        indicatorBgPadding: 4.0,
+        indicatorBgPadding: 6.0,
       ),
     );
 
@@ -115,7 +118,16 @@ class _HomePageState extends State<HomePage> {
         ),
         body: new ListView(
           children: <Widget>[
-            imageCarousel
+            //Image Carousel
+            imageCarousel,
+
+            new Padding(padding: const EdgeInsets.all(8.0),
+              child: new Text("Categories"),
+            ),
+
+            //Category List in Horizontal
+            CategoryHorizontalList(),
+
           ],
         ));
   }
