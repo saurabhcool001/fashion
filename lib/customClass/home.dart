@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 //Custom Package
 import 'package:fashion/customClass/category_horizontal_listview.dart';
+import 'package:fashion/customClass/recent_product.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -121,13 +122,24 @@ class _HomePageState extends State<HomePage> {
             //Image Carousel
             imageCarousel,
 
-            new Padding(padding: const EdgeInsets.all(8.0),
+            new Padding(
+              padding: const EdgeInsets.all(8.0),
               child: new Text("Categories"),
             ),
 
             //Category List in Horizontal
             CategoryHorizontalList(),
 
+            new Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 15.0, 8.0, 8.0),
+              child: new Text("Recent Product"),
+            ),
+
+            //Recent Product List
+            Container(
+              height: 320.0,
+              child: RecentProduct(),
+            ),
           ],
         ));
   }

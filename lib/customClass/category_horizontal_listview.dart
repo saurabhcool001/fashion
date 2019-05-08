@@ -60,11 +60,12 @@ class Category extends StatelessWidget {
             title: Image.asset(
               imageLocation,
               width: 100.0,
-              height: 80.0,
+              height: 50.0,
             ),
             subtitle: new Container(
               alignment: Alignment.topCenter,
-              child: Text(imageCaption, style: TextStyle(fontSize: 8.0),),
+              padding: EdgeInsets.only(top: 8.0),
+              child: Text(imageCaption, style: TextStyle(fontSize: 12.0),),
             ),
           ),
         ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-//Custome Package
+//Custom Package
 import 'package:fashion/customClass//home.dart';
 
 void main() {
   runApp(
     new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+//      home: HomePage()
+    home: HomePage()
     )
   );
 }
