@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//Custom Package
+import 'package:fashion/pages/product_details.dart';
+
 class RecentProduct extends StatefulWidget {
   @override
   _RecentProductState createState() => _RecentProductState();
@@ -58,29 +61,38 @@ class SingleProduct extends StatelessWidget {
           tag: productName,
           child: Material(
             child: InkWell(
-              onTap: () {},
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (context) => new ProductDetails(
+                    productDetailsName: productName,
+                    productDetailsPicture: productPicture,
+                    productDetailsOldPrice: productOldPrice,
+                    productDetailsPrice: productPrice,
+                  ))),
               child: GridTile(
                 footer: Container(
-                  color: Colors.white70,
+                    color: Colors.white70,
                     child: ListTile(
-                  leading: Text(
-                    productName,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                      leading: Text(
+                        productName,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       title: Text(
                         "\$$productPrice",
-                        style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 18),
+                        style: TextStyle(
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
                       ),
                       subtitle: Text(
                         "\$$productOldPrice",
                         style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 14,
-                            decoration: TextDecoration.lineThrough,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 14,
+                          decoration: TextDecoration.lineThrough,
                         ),
                       ),
-                )),
+                    )),
                 child: Image.asset(
                   productPicture,
                   fit: BoxFit.cover,
