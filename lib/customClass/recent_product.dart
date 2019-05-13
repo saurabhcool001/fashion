@@ -21,6 +21,30 @@ class _RecentProductState extends State<RecentProduct> {
       "picture": "images/products/dress1.jpeg",
       "old_price": 100,
       "price": 50,
+    },
+    {
+      "name": "Hills",
+      "picture": "images/products/hills1.jpeg",
+      "old_price": 200,
+      "price": 170,
+    },
+    {
+      "name": "Jeans",
+      "picture": "images/products/pants2.jpeg",
+      "old_price": 190,
+      "price": 150,
+    },
+    {
+      "name": "Shoe",
+      "picture": "images/products/shoe1.jpg",
+      "old_price": 80,
+      "price": 75,
+    },
+    {
+      "name": "Flower dress",
+      "picture": "images/products/skt1.jpeg",
+      "old_price": 120,
+      "price": 80,
     }
   ];
 
