@@ -4,8 +4,8 @@ class CategoryHorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-//      height: 100.0,
-    height: 80.0,
+//      height: 80.0,
+    height: 60.0,
       child: new ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
@@ -56,17 +56,18 @@ class Category extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: new Container(
-          width: 100.0,
+          width: 80.0,
           child: new ListTile(
             title: Image.asset(
               imageLocation,
-              width: 100.0,
-              height: 50.0,
+//              width: 80.0,
+//              height: 50.0,
             ),
             subtitle: new Container(
               alignment: Alignment.topCenter,
-              padding: EdgeInsets.only(top: 8.0),
-              child: Text(imageCaption, style: TextStyle(fontSize: 12.0),),
+                //If you wanna add text of categories then uncomment it
+//              padding: EdgeInsets.only(top: 8.0),
+//              child: Text(imageCaption, style: TextStyle(fontSize: 12.0),),
             ),
           ),
         ),

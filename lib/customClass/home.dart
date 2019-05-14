@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Widget imageCarousel = new Container(
-      height: 250.0,
+      height: 180.0,
       child: new Carousel(
-        boxFit: BoxFit.cover,
+        boxFit: BoxFit.fitWidth,
         images: [
           AssetImage("images/c1.jpg"),
           AssetImage("images/m1.jpeg"),
@@ -129,29 +129,39 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: new ListView(
+//        body: new ListView(
+          body: new Column(
           children: <Widget>[
             //Image Carousel
             imageCarousel,
 
             new Padding(
               padding: const EdgeInsets.all(8.0),
-              child: new Text("Categories"),
+              child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: new Text("Categories")),
             ),
 
             //Category List in Horizontal
             CategoryHorizontalList(),
 
             new Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 15.0, 8.0, 8.0),
-              child: new Text("Recent Product"),
+//              padding: const EdgeInsets.fromLTRB(8.0, 15.0, 8.0, 8.0),
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: new Text("Recent Product")),
+
             ),
 
             //Recent Product List
-            Container(
-              height: 320.0,
-              child: RecentProduct(),
-            ),
+//            Container(
+//              height: 320.0,
+//              child: RecentProduct(),
+//            ),
+
+            //Flexible GridView
+            Flexible(child: RecentProduct(),),
           ],
         ));
   }
