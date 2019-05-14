@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 //Custom Package
 import 'package:fashion/customClass/category_horizontal_listview.dart';
 import 'package:fashion/customClass/recent_product.dart';
+import 'package:fashion/pages/cart.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,7 +46,12 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {}),
               new IconButton(
                   icon: Icon(Icons.shopping_cart, color: Colors.white),
-                  onPressed: () {})
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => new Cart()));
+                  })
             ]),
         drawer: new Drawer(
           child: new ListView(
@@ -85,10 +91,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => new Cart()));
+                },
                 child: ListTile(
-                  title: Text("Categories"),
-                  leading: Icon(Icons.dashboard, color: Colors.red,),
+                  title: Text("Shopping Cart"),
+                  leading: Icon(Icons.add_shopping_cart, color: Colors.red,),
                 ),
               ),
               InkWell(
