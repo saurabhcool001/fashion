@@ -5,6 +5,8 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:fashion/customClass/category_horizontal_listview.dart';
 import 'package:fashion/customClass/recent_product.dart';
 import 'package:fashion/pages/cart.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fashion/pages/login.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     Widget imageCarousel = new Container(
@@ -47,10 +51,8 @@ class _HomePageState extends State<HomePage> {
               new IconButton(
                   icon: Icon(Icons.shopping_cart, color: Colors.white),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => new Cart()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => new Cart()));
                   })
             ]),
         drawer: new Drawer(
@@ -73,40 +75,67 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {},
                 child: ListTile(
                   title: Text("Home"),
-                  leading: Icon(Icons.home, color: Colors.red,),
+                  leading: Icon(
+                    Icons.home,
+                    color: Colors.red,
+                  ),
                 ),
               ),
               InkWell(
                 onTap: () {},
                 child: ListTile(
                   title: Text("My Account"),
-                  leading: Icon(Icons.person, color: Colors.red,),
+                  leading: Icon(
+                    Icons.person,
+                    color: Colors.red,
+                  ),
                 ),
               ),
               InkWell(
                 onTap: () {},
                 child: ListTile(
                   title: Text("My Orders"),
-                  leading: Icon(Icons.shopping_basket, color: Colors.red,),
+                  leading: Icon(
+                    Icons.shopping_basket,
+                    color: Colors.red,
+                  ),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => new Cart()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => new Cart()));
                 },
                 child: ListTile(
                   title: Text("Shopping Cart"),
-                  leading: Icon(Icons.add_shopping_cart, color: Colors.red,),
+                  leading: Icon(
+                    Icons.add_shopping_cart,
+                    color: Colors.red,
+                  ),
                 ),
               ),
               InkWell(
                 onTap: () {},
                 child: ListTile(
                   title: Text("Favorites"),
-                  leading: Icon(Icons.favorite, color: Colors.red,),
+                  leading: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  _firebaseAuth.signOut();
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
+                child: ListTile(
+                  title: Text("Sign Out"),
+                  leading: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
                 ),
               ),
 
@@ -130,7 +159,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 //        body: new ListView(
-          body: new Column(
+        body: new Column(
           children: <Widget>[
             //Image Carousel
             imageCarousel,
@@ -151,7 +180,6 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                   alignment: Alignment.centerLeft,
                   child: new Text("Recent Product")),
-
             ),
 
             //Recent Product List
@@ -161,7 +189,9 @@ class _HomePageState extends State<HomePage> {
 //            ),
 
             //Flexible GridView
-            Flexible(child: RecentProduct(),),
+            Flexible(
+              child: RecentProduct(),
+            ),
           ],
         ));
   }
