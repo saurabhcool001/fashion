@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 //Custom Package
 import 'package:fashion/customClass//home.dart';
 import 'package:fashion/pages/login.dart';
+import 'package:fashion/pages/google_signin.dart';
 
 void main() {
-  runApp(
-    new MaterialApp(
+  runApp(new MaterialApp(
       debugShowCheckedModeBanner: false,
 //      home: HomePage()
-    home: Login()
-    )
-  );
+      home: Login()));
 }
 
 //class HomePage extends StatelessWidget {
